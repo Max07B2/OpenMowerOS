@@ -37,7 +37,7 @@ cat > /etc/docker/daemon.json <<'EOF'
 EOF
 fi
 
-# Boundled docker images
+# Bundled docker images
 mkdir -p /opt/docker-images
 chmod -R u=rwX,g=rX,o=rX /opt/docker-images
 
