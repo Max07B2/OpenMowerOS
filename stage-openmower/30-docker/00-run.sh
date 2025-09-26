@@ -4,7 +4,7 @@ STAGE_DIR="$(dirname "$0")"
 
 install -m 0644 -D "$STAGE_DIR/files/etc/systemd/system/docker-preload-images.service" "$ROOTFS_DIR/etc/systemd/system/docker-preload-images.service"
 
-# Install boundled docker images
+# Install bundled docker images
 install -d -m 0755 "$ROOTFS_DIR/opt/docker-images"
 cp -a "$STAGE_DIR/files/opt/docker-images/." "$ROOTFS_DIR/opt/docker-images/"
 
