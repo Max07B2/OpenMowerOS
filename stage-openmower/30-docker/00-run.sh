@@ -21,7 +21,7 @@ if compgen -G "$DEST"/*.tar.gz.part* > /dev/null; then
     done
 fi
 
-# Uncompress all .tar.gz files to .tar. OS image get ZIPped anyway but preload service only needs docker load em
+# Uncompress all .tar.gz files to .tar. OS image gets ZIPped anyway but preload service only needs docker load them
 for gz in "$DEST"/*.tar.gz; do
     [ -e "$gz" ] || break
     gunzip -f "$gz"
