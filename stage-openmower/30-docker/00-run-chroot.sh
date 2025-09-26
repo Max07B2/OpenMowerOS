@@ -36,3 +36,10 @@ cat > /etc/docker/daemon.json <<'EOF'
 }
 EOF
 fi
+
+# Boundled docker images
+mkdir -p /opt/docker-images
+chmod -R u=rwX,g=rX,o=rX /opt/docker-images
+
+# Ensure the preloader runs on boot (after docker)
+systemctl enable docker-preload-images.service
