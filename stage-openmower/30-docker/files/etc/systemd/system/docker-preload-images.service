@@ -1,5 +1,5 @@
 [Unit]
-Description=Preload bundled Docker images (*.tar / *.tar.gz) into local Docker
+Description=Preload bundled Docker images (*.tar) into local Docker
 After=docker.service
 Requires=docker.service
 Before=dockge.service webterminal.service
@@ -9,11 +9,6 @@ ConditionDirectoryNotEmpty=/opt/docker-images
 Type=oneshot
 ExecStart=/bin/sh -e -c '\
 dir=/opt/docker-images; \
-# Decompress any .tar.gz \
-for gz in "$dir"/*.tar.gz; do \
-  [ -e "$gz" ] || break; \
-  gunzip -f "$gz"; \
-done; \
 # Load all .tar and delete on success \
 for tar in "$dir"/*.tar; do \
   [ -e "$tar" ] || break; \

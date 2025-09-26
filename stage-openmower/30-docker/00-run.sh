@@ -20,3 +20,9 @@ if compgen -G "$DEST"/*.tar.gz.part* > /dev/null; then
         rm -f "${base}".part*
     done
 fi
+
+# Uncompress all .tar.gz files to .tar. OS image get ZIPped anyway but preload service only needs docker load em
+for gz in "$DEST"/*.tar.gz; do
+    [ -e "$gz" ] || break
+    gunzip -f "$gz"
+done
