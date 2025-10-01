@@ -1,0 +1,21 @@
+[Unit]
+Description=Preload bundled Docker images (*.tar) into local Docker
+After=docker.service
+Requires=docker.service
+Before=dockge.service webterminal.service
+ConditionDirectoryNotEmpty=/opt/docker-images
+
+[Service]
+Type=oneshot
+TimeoutStartSec=4min
+ExecStart=/bin/sh -e -c '\
+dir=/opt/docker-images; \
+# Load all .tar and delete on success \
+for tar in "$dir"/*.tar; do \
+  [ -e "$tar" ] || break; \
+  if docker load -i "$tar"; then rm -f "$tar"; fi; \
+done \
+'
+
+[Install]
+WantedBy=multi-user.target
