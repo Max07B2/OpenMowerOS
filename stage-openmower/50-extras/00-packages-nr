@@ -6,3 +6,4 @@ aptitude
 socat
 bind9-host
 bind9-dnsutils
+python3-serial
