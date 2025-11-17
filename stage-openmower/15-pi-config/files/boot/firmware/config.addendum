@@ -56,10 +56,16 @@ dtparam=ant1
 # External- U.FL/IPEX antenna connector:
 # dtparam=ant2
 
+# Fan control (on CM4 it's GPIO18)
+dtoverlay=pwm-gpio-fan,fan_gpio=18
+
 [cm5]
 # CM5 antenna selection — choose Wi‑Fi antenna path
 # Internal/on‑module antenna (default):
 dtparam=ant1
 # External- U.FL/IPEX antenna connector:
 # dtparam=ant2
+
+# Fan control (on CM5 it's GPIO18)
+dtoverlay=pwm-gpio-fan,fan_gpio=18
 
