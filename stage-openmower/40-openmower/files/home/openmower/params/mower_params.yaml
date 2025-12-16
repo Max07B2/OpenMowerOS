@@ -38,7 +38,7 @@ mower_logic:
   rain_check_seconds: 20
   undock_distance: 1.0
   undock_angled_distance: 2.0
-  undock_angle: 45.0
+  undock_angle: 0.0
   undock_fixed_angle: false
   undock_use_curve: true
   # Once you validated the functionality of your emergency sensors,
