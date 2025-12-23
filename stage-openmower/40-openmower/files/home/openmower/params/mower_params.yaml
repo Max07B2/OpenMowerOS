@@ -30,7 +30,7 @@ mower_logic:
   outline_overlap_count: 1
   mow_angle_offset: 0
   mow_angle_offset_is_absolute: false
-  mow_angle_increment: 110
+  mow_angle_increment: 0
   gps_wait_time: 5.0
   gps_timeout: 5.0
   rain_mode: 0
