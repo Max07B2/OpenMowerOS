@@ -15,7 +15,7 @@ Legend: ✅ Pass · ❌ Fail · 🟡 Todo · 🔁 Retry · 🧪 Manual-only
 | Imager Wi‑Fi                             | Preseeded Wi‑Fi connects on first boot    |      ✅       |      ✅       |      ✅       |
 | Imager openmower pass                    | Applied when configured                   |      ✅       |      ✅       |      ✅       |
 | No known Wi‑Fi                           | Comitup AP appears (default SSID pattern) |      🟡       |      ✅       |      🟡       |
-| AP portal                                | Able to configure Wi‑Fi, then joins WLAN  |      🟡       |      ✅       |      🟡       |
+| Comitup captive portal                   | Able to configure Wi‑Fi, then joins WLAN  |      🟡       |      🔁       |      🟡       |
 | Internal LAN                             | xCore is getting an IPv4                  |      🟡       |      ✅       |      ✅       |
 | Home LAN                                 | eth0 IPv4 by your networks DHCP           |      🟡       |      ✅       |      ✅       |
 | SSH                                      | Reachable after network is up             |      ✅       |      ✅       |      ✅       |
@@ -23,6 +23,7 @@ Legend: ✅ Pass · ❌ Fail · 🟡 Todo · 🔁 Retry · 🧪 Manual-only
 | Dockge                                   | Reachable at port 5001                    |      ✅       |      ✅       |      ✅       |
 | ESC access                               | Ports get exposed via `openmower ...` cmd |      ✅       |      🟡       |      🟡       |
 | GNSS access                              | Port get exposed via `openmower ...` cmd  |      ✅       |      🟡       |      🟡       |
+| OpenOCD remote debugging                 | Remote debugging via `openmower openocd`  |      🟡       |      🟡       |      🟡       |
 | Container shell (prefix)                 | `openmower shell` has docker prefix       |      ✅       |      ✅       |      ✅       |
 
 ## Notes
