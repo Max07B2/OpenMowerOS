@@ -13,3 +13,7 @@ systemctl mask NetworkManager-wait-online.service
 if ! grep -q '^ap_name:' /etc/comitup.conf 2>/dev/null; then
     printf '\n# Default OpenMower AP name for provisioning\nap_name: OpenMower-<nnn>\n' >> /etc/comitup.conf
 fi
+
+# Enable external_callback to manage dnsmasq
+sed -i 's/^# external_callback:.*/external_callback: \/usr\/local\/bin\/comitup-callback' /etc/comitup.conf
+chown -R root:root "$ROOTFS_DIR/usr/local/bin/comitup-callback"

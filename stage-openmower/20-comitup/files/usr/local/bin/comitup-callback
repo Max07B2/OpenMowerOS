@@ -1,0 +1,32 @@
+#!/bin/bash
+# Callback script for comitup to manage dnsmasq
+# Argument: $1 = state (HOTSPOT, CONNECTING, CONNECTED)
+
+LOG="/var/log/comitup-callback.log"
+DNSMASQ_SERVICE="dnsmasq.service"
+
+log() {
+    echo "$(date): $*" >> "$LOG"
+}
+
+case "$1" in
+    HOTSPOT)
+        log "Entering HOTSPOT mode - stopping dnsmasq"
+        systemctl stop "$DNSMASQ_SERVICE" 2>/dev/null
+        pkill -9 dnsmasq 2>/dev/null
+        # Ensure no dnsmasq is listening on port 67
+        ss -ulpn | grep :67 && log "WARNING: Port 67 still occupied"
+    ;;
+    CONNECTING)
+        log "Entering CONNECTING mode - dnsmasq remains stopped"
+    ;;
+    CONNECTED)
+        log "Entering CONNECTED mode - restarting dnsmasq"
+        systemctl start "$DNSMASQ_SERVICE" 2>/dev/null
+    ;;
+    *)
+        log "Unknown state: $1"
+    ;;
+esac
+
+exit 0
