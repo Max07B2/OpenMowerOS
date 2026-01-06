@@ -8,7 +8,7 @@ Legend: ✅ Pass · ❌ Fail · 🟡 Todo · 🔁 Retry · 🧪 Manual-only
 | Debian release `lsb_release -a`          | Debian GNU/Linux 13 (trixie)              |      ✅       |      ✅       |      ✅       |
 | OpenMowerOS release `cat /etc/rpi-issue` | OpenMowerOS v2.x YYYY-MM-DD               |      ✅       |      ✅       |      ✅       |
 | Hostname (default) `hostname`            | openmower                                 |      🟡       |      ✅       |      ✅       |
-| Hostname (non- default) `hostname`       | <as set by Raspberry Pi Imager v1.9.x>    |      ✅       |      ✅       |      ✅       |
+| Hostname (non-default) `hostname`        | <as set by Raspberry Pi Imager v1.9.x>    |      ✅       |      ✅       |      ✅       |
 | Default user/password                    | openmower/openmower                       |      🟡       |      ✅       |      ✅       |
 | SSH enabled                              | SSH active on first boot                  |      ✅       |      ✅       |      ✅       |
 | SSH public key                           | Password less SSH login via SSH-key       |      🟡       |      ✅       |      ✅       |
