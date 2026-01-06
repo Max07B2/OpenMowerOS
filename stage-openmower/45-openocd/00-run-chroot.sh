@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+chown -R 1000:1000 /home/openmower/.config
+
 export DEBIAN_FRONTEND=noninteractive
 
 # Install dependencies
