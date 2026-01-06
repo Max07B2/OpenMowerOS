@@ -14,6 +14,12 @@ chown -R 1000:1000 /home/openmower/ros
 mkdir -p /home/openmower/params
 chown -R 1000:1000 /home/openmower/params
 
+# Create dir and symlink for easy access to "latest" ros log
+mkdir -p /data
+chown -R 1000:1000 /data
+ln -s /home/openmower/ros /data/ros
+
+
 export DEBIAN_FRONTEND=noninteractive
 
 # Minimal deps for fetching & unpacking
