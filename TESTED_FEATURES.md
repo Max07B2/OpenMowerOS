@@ -15,7 +15,7 @@ Legend: ✅ Pass · ❌ Fail · 🟡 Todo · 🔁 Retry · 🧪 Manual-only
 | Imager Wi‑Fi                             | Preseeded Wi‑Fi connects on first boot    |      ✅       |      ✅       |      ✅       |
 | Imager openmower pass                    | Applied when configured                   |      ✅       |      ✅       |      ✅       |
 | No known Wi‑Fi                           | Comitup AP appears (default SSID pattern) |      🟡       |      ✅       |      ✅       |
-| Comitup captive portal                   | Able to configure Wi‑Fi, then joins WLAN  |      🟡       |      ✅       |    ✅ [^1]    |
+| Comitup captive portal                   | Able to configure Wi‑Fi, then joins WLAN  |      🟡       |      ✅       |      ✅       |
 | Internal LAN                             | xCore is getting an IPv4                  |      🟡       |      ✅       |      ✅       |
 | Home LAN                                 | eth0 IPv4 by your networks DHCP           |      🟡       |      ✅       |      ✅       |
 | SSH                                      | Reachable after network is up             |      ✅       |      ✅       |      ✅       |
@@ -30,5 +30,3 @@ Legend: ✅ Pass · ❌ Fail · 🟡 Todo · 🔁 Retry · 🧪 Manual-only
 
 - Update cells as you validate on each hardware combo.
 - If Imager Wi‑Fi is set, Comitup should not spawn AP; if not, AP should appear.
-
-[^1]: Reboot required after entering WiFi credentials into comitup captive portal
