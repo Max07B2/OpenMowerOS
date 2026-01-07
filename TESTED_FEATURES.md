@@ -31,4 +31,4 @@ Legend: ✅ Pass · ❌ Fail · 🟡 Todo · 🔁 Retry · 🧪 Manual-only
 - Update cells as you validate on each hardware combo.
 - If Imager Wi‑Fi is set, Comitup should not spawn AP; if not, AP should appear.
 
-[^1]: You probably need to power-cycle your mower after entering you home WiFi credentials
+[^1]: You probably need to power-cycle your mower after entering your home WiFi credentials
