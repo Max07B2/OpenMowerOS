@@ -45,8 +45,7 @@ Tip: Click a section title to expand/collapse.
 
 3. After writing the image, eject the card, insert it into your mower’s Pi or xCore, and turn it on.
 
-4. Your Pi will boot multiple times.<br>
-   ***Sometimes, after the first boot, it may fail to reboot*** (the Pi/xCore’s green LED doesn’t flicker anymore and remains off for >10 seconds). If that happens, a power cycle will get it back on track.
+4. Your Pi will boot multiple times. Be patient and wait till the green activity LED becomes silent for ≥ 10 seconds.<br>
 
 5. ***Optional: Comitup hotspot (if you skipped step 2 "Raspberry Pi Imager configuration")***<br>
 If you didn't enter your Wifi settings when asked for the custom settings during Pi Imager (see step 2), or if you accidentally entered the wrong Wifi settings:
@@ -61,7 +60,7 @@ If you didn't enter your Wifi settings when asked for the custom settings during
 
    4. The hotspot will disappear and the mower should connect to your WiFi.
 
-6. Two minutes after the second reboot, try pinging your mower via `ping openmower` (or the hostname you entered during Pi Imager). If the host can't be found, check your router for the mower's IP address.
+6. Once the green activity LED becomes silent, try pinging your mower via `ping openmower` (or the hostname you entered during Pi Imager). If the host can't be found, check your router for the mower's IP address.
 
 7. ***Optional:***<br>
    1. If you didn't configure a custom password during step 2 (Raspberry Pi Imager configuration), login via SSH and change your password now via `passwd`.
@@ -75,10 +74,9 @@ If you didn't enter your Wifi settings when asked for the custom settings during
 <summary><b>Manage OpenMower stack (GUI + CLI)</b></summary>
  
 [Dockge](https://dockge.kuma.pet/) (a container manager GUI) and [ttyd](https://tsl0922.github.io/ttyd/) (a web terminal)
-are bundled with the OpenMowerOS image and are unpacked and installed during the final second‑boot step.
-This may take about 2 minutes.
+are bundled together with the OpenMowerOS image, get unpacked and installed during the final boot step.
 
-Please wait while the Pi/xCore’s green LED is flickering or steadily on.
+Please wait till Pi/xCore’s green LED becomes silent for ≥ 10 seconds.
 
 The WebTerminal is available as a lightweight alternative to SSH for running the same commands.
 It can be reached via `http://openmower:7681` (adjust if you changed the hostname).
@@ -99,18 +97,12 @@ For each relevant GUI action, a CLI alternative is available via a powerful `ope
        ![Save .env](.github/img/dockge_04_save.jpg)
 
 3. Start the stack (including the initial pull)
-    - CLI: If you configured your .env file via `openmower configure env` then the stack is pulled and started automatically.<br>
-      If not:
-
-       ```bash
-       openmower pull
-       openmower start
-       ```
+    - CLI: If you configured your .env file via `openmower configure env` then the stack is pulled and started automatically.
     - GUI:
        ![Start Stack](.github/img/dockge_05_start.jpg)
 
 4. Check status and open the OpenMower web app
-   - CLI: `openmower status` should list three service names (open_mower_ros, Mosquitto and OpenMowerApp), all with status 'up'. If so, open a browser and visit `http://openmower:8080` (or your configured hostname).
+   - CLI: `openmower status` should list three services (open_mower_ros, Mosquitto and OpenMowerApp), all with status 'up'. If so, open a browser and visit `http://openmower:8080` (or your configured hostname).
    - GUI:
        ![Stack Active](.github/img/dockge_06_active.jpg)
 

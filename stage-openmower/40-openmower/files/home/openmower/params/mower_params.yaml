@@ -30,7 +30,7 @@ mower_logic:
   outline_overlap_count: 1
   mow_angle_offset: 0
   mow_angle_offset_is_absolute: false
-  mow_angle_increment: 110
+  mow_angle_increment: 0
   gps_wait_time: 5.0
   gps_timeout: 5.0
   rain_mode: 0
@@ -38,7 +38,7 @@ mower_logic:
   rain_check_seconds: 20
   undock_distance: 1.0
   undock_angled_distance: 2.0
-  undock_angle: 45.0
+  undock_angle: 0.0
   undock_fixed_angle: false
   undock_use_curve: true
   # Once you validated the functionality of your emergency sensors,
